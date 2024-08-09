@@ -1,0 +1,21 @@
+.input-group {
+    width: 50% !important;
+}
+input:focus {
+    outline: none !important;
+  }
+.search {
+    padding: 2rem;
+}
+.search input {
+    padding: 1rem;
+}
+.search-box img {
+    width: 200px;
+}
+.search-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
