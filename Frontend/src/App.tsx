@@ -1,30 +1,35 @@
-import './App.css'
-import Home from './pages/Home'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Ferdowsi from "./components/Ferdowsi.jsx";
-
-
+import "./App.css";
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Ferdowsi from "./pages/Ferdowsi";
+import Charachters from "./pages/Charachters";
+import Stories from "./pages/Stories";
+import Gallery from "./pages/Gallery";
+import Artworks from "./pages/Artworks";
+import Blog from "./pages/blog";
+import Educate from "./pages/Educate";
+import Store from "./pages/Store";
+import Favorites from "./pages/favorites";
 
 function App() {
-
   return (
     <>
-    <Home />
-    <Router>
-      <Routes>
-        <Route path="/ferdowsi" element={<Ferdowsi />} />
-        {/* <Route path="/characters" element={<Characters />} />
-        <Route path="/stories" element={<Stories />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/art-works" element={<ArtWorks />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/educate" element={<Educate />} />
-        <Route path="/store" element={<Store />} />
-        <Route path="/favorites" element={<Favorites />} /> */}
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ferdowsi" element={<Ferdowsi />} />
+          <Route path="/characters" element={<Charachters />} />
+          <Route path="/stories" element={<Stories />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/artworks" element={<Artworks />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/educate" element={<Educate />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
