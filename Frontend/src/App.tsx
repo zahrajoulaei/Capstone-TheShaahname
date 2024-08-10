@@ -9,7 +9,7 @@ import Artworks from "./pages/Artworks";
 import Blog from "./pages/blog";
 import Educate from "./pages/Educate";
 import Store from "./pages/Store";
-import Favorites from "./pages/favorites";
+import Favorites from "./pages/Favorites";
 
 function App() {
   return (

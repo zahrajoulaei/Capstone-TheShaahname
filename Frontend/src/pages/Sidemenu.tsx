@@ -1,17 +1,20 @@
+import React from "react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./Sidemenu.css";
 import {
   faBook,
   faBookOpen,
   faBrush,
   faHeart,
   faHorse,
+  faHouseUser,
   faImage,
   faNewspaper,
   faPerson,
   faShop,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
-import "./Sidemenu.css";
+import { Link } from "react-router-dom";
 
 export default function Sidemenu() {
   return (
@@ -19,41 +22,82 @@ export default function Sidemenu() {
       <ul>
         <li>
           <FontAwesomeIcon icon={faPerson} />
-          <span className="hide-on-small-screen"> Ferdowsi</span>
+
+          <Link to="/ferdowsi" className="link-class">
+            <span className="hide-on-small-screen"> Ferdowsi</span>
+          </Link>
         </li>
 
         <li>
           <FontAwesomeIcon icon={faHorse} />
-          <span className="hide-on-small-screen"> Characters</span>
+
+          <Link to="/characters" className="link-class">
+            <span className="hide-on-small-screen"> Characters</span>
+          </Link>
         </li>
 
         <li>
           <FontAwesomeIcon icon={faBook} />
-          <span className="hide-on-small-screen"> Stories</span>
+
+          <Link to="/stories" className="link-class">
+            <span className="hide-on-small-screen"> Stories</span>
+          </Link>
         </li>
+
         <li>
           <FontAwesomeIcon icon={faImage} />
-          <span className="hide-on-small-screen"> Gallery</span>
+
+          <Link to="/gallery" className="link-class">
+            <span className="hide-on-small-screen"> Gallery</span>
+          </Link>
         </li>
+
         <li>
           <FontAwesomeIcon icon={faBrush} />
-          <span className="hide-on-small-screen"> Art works</span>
+
+          <Link to="/artworks" className="link-class">
+            <span className="hide-on-small-screen"> Art works</span>
+          </Link>
         </li>
+
         <li>
           <FontAwesomeIcon icon={faNewspaper} />
-          <span className="hide-on-small-screen"> blog</span>
+
+          <Link to="/blog" className="link-class">
+            <span className="hide-on-small-screen"> blog</span>
+          </Link>
         </li>
+
         <li>
           <FontAwesomeIcon icon={faBookOpen} />
-          <span className="hide-on-small-screen"> Educate</span>
+
+          <Link to="/gallery" className="link-class">
+            <span className="hide-on-small-screen"> Educate</span>
+          </Link>
         </li>
+
         <li>
           <FontAwesomeIcon icon={faShop} />
-          <span className="hide-on-small-screen"> Store</span>
+
+          <Link to="/gallery" className="link-class">
+            <span className="hide-on-small-screen"> Store</span>
+          </Link>
         </li>
+
         <li>
           <FontAwesomeIcon icon={faHeart} />
-          <span className="hide-on-small-screen"> Favorites</span>
+
+          <Link to="/gallery" className="link-class">
+            <span className="hide-on-small-screen"> Favorites</span>
+          </Link>
+        </li>
+
+        <li>
+        <FontAwesomeIcon icon={faHouseUser} />
+
+          <Link to="/" className="link-class">
+            <span className="hide-on-small-screen"> Home</span>
+          </Link>
         </li>
       </ul>
     </div>

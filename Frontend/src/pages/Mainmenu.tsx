@@ -12,7 +12,7 @@ export default function Mainmenu() {
       <Row className="search-box">
         <img src="src/assets/images/logohorse.png" />
 
-        <InputGroup className="search">
+        {/* <InputGroup className="search">
         
           <InputGroup.Text id="basic-addon1">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -23,7 +23,7 @@ export default function Mainmenu() {
             aria-label="search"
             aria-describedby="search"
           />
-        </InputGroup>
+        </InputGroup> */}
       </Row>
 
       <Row>
@@ -33,24 +33,24 @@ export default function Mainmenu() {
 
       <Row>
         <Col>
-          <Cardshah title="Ferdowsi" desc="Ferdowsi" button="see more"/>
+          <Cardshah title="Ferdowsi" desc="Ferdowsi" button="see more" link="/ferdowsi"/>
         </Col>
         <Col>
-          <Cardshah title="Characters" desc="Characters and features" button="see more"/>
+          <Cardshah title="Characters" desc="Characters and features" button="see more" link="/characters"/>
         </Col>
         <Col>
-          <Cardshah title="Stories" desc="Stories" button="see more"/>
+          <Cardshah title="Stories" desc="Stories" button="see more" link="/stories"/>
         </Col>
       </Row>
       <Row>
         <Col>
-            <Cardshah title="Gallery" desc="The Shahnameh gallery" button="see more"/>
+            <Cardshah title="Gallery" desc="The Shahnameh gallery" button="see more" link="/gallery"/>
           </Col>
           <Col>
-            <Cardshah title="Art Works" desc="The Shahnameh Artworks" button="see more"/>
+            <Cardshah title="Art Works" desc="The Shahnameh Artworks" button="see more" link="/artworks"/>
           </Col>
           <Col>
-            <Cardshah title="Store" desc="Store" button="see more"/>
+            <Cardshah title="Store" desc="Store" button="see more" link="/store"/>
           </Col>
       </Row>
     </>

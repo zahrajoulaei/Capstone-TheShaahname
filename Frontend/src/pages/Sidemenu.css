@@ -4,12 +4,22 @@
 }
 
 .side-menu ul li {
-    list-style: none;
+    list-style: none !important;
     padding: 1rem;
     border-bottom: 1px solid gray;
     cursor: pointer;
     
 }
+.side-menu ul li a, 
+.side-menu ul li a:visited {
+  border-bottom: 1px solid gray !important;
+  list-style: none !important;
+  text-decoration: none !important; 
+  color: inherit;
+}
+
+
+
 
 @media (max-width: 768px) {
     .hide-on-small-screen {
