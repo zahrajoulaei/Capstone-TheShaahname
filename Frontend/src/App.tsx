@@ -2,7 +2,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Ferdowsi from "./pages/Ferdowsi";
-import Charachters from "./pages/Charachters";
+import Charachters from "./pages/Characters";
 import Stories from "./pages/Stories";
 import Gallery from "./pages/Gallery";
 import Artworks from "./pages/Artworks";
