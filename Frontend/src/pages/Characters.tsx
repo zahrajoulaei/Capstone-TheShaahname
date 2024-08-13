@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import Header from "../components/header/Header";
 import { Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import Sidemenu from "./Sidemenu";
 import Footer from "../components/footer/Footer";
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Cardshah from "../components/card/Cardshah";
 
 interface Character {
   id: number;
@@ -16,15 +17,13 @@ interface Character {
   specialty: string;
 }
 
-
 export default function Charachters() {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-
   useEffect(() => {
-    fetch('http://localhost:3000/api/characters')
+    fetch("http://localhost:3000/api/characters")
       .then((response) => {
         console.log("Response received:", response);
         if (!response.ok) {
@@ -38,14 +37,11 @@ export default function Charachters() {
         setLoading(false);
       })
       .catch((error) => {
-        console.error('Error fetching characters:', error);
-        setError('Failed to load characters');
+        console.error("Error fetching characters:", error);
+        setError("Failed to load characters");
         setLoading(false);
       });
   }, []);
-
-
-
 
   if (loading) {
     return <div>Loading...</div>;
@@ -66,41 +62,51 @@ export default function Charachters() {
           <Sidemenu />
         </Col>
         <Col xs={10}>
-        <Row className="search-box">
-        <img src="src/assets/images/logohorse.png" />
+          <Row className="search-box">
+            <img src="src/assets/images/logohorse.png" />
 
-        <InputGroup className="search">
-        
-          <InputGroup.Text id="basic-addon1">
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </InputGroup.Text>
+            <InputGroup className="search">
+              <InputGroup.Text id="basic-addon1">
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </InputGroup.Text>
 
-          <Form.Control
-            placeholder="Search. . . "
-            aria-label="search"
-            aria-describedby="search"
-          />
-        </InputGroup>
-      </Row>
+              <Form.Control
+                placeholder="Search. . . "
+                aria-label="search"
+                aria-describedby="search"
+              />
+            </InputGroup>
+          </Row>
 
-      <Row>
-      <div>
-        
-        <h1>Characters in Shahnameh</h1>
-        <ul>
-          {characters.map((character) => (
-            <li key={character.id}>
-              <h2>{character.name}</h2>
-              <p>Monarchy: {character.monarchy}</p>
-              <p>Age: {character.age}</p>
-              <p>Abilities: {character.abilities.join(', ')}</p>
-              <p>Specialty: {character.specialty}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-      </Row>
-       
+          <Row>
+            <h4>Characters in Shahnameh</h4>
+            <p>
+              Here is a selection of special characters from the Shahnameh, a
+              timeless epic filled with over a hundred unique figures, each with
+              their own remarkable abilities. Right now, 48 of these characters
+              are listed below, giving you a glimpse into the rich world of this
+              legendary story.
+            </p>
+          </Row>
+
+          <Row>
+            <div>
+              <h1>Characters in Shahnameh</h1>
+
+              <Row>
+                {characters.map((character) => (
+                  <Col key={character.id} md={4} className="mb-4">
+                    <Cardshah
+                      title={character.name}
+                      desc={`Monarchy: ${character.monarchy}, Age: ${character.age}`} // Customize description as needed
+                      button="View Details"
+                      link={`/characters/${character.id}`}
+                    />
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          </Row>
         </Col>
       </Row>
 

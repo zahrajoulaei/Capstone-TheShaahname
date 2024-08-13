@@ -2,10 +2,8 @@ import React from "react";
 
 import Header from "../components/header/Header";
 
-// import "./Home/css"
 import { Col, Container, Row } from "react-bootstrap";
 import Sidemenu from "./Sidemenu";
-import Mainmenu from "./Mainmenu";
 import Footer from "../components/footer/Footer";
 
 export default function Ferdowsi() {
@@ -19,9 +17,7 @@ export default function Ferdowsi() {
         <Col xs={2}>
           <Sidemenu />
         </Col>
-        <Col xs={10}>
-        Ferdowsi
-        </Col>
+        <Col xs={10}>Ferdowsi</Col>
       </Row>
 
       <Row>

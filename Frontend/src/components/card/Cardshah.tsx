@@ -1,13 +1,22 @@
 import React from "react";
-import { Card, Button, Col } from "react-bootstrap";
-import "./Cardshah.css"
+import { Card, Button } from "react-bootstrap";
+import "./Cardshah.css";
 import { Link } from "react-router-dom";
+import cardImage from "../../assets/images/cardpic.png";
 
-export default function (props) {
+interface CardshahProps {
+  title: string;
+  desc: string;
+  button: string;
+  link: string;
+  image?: string;
+}
+
+export default function Cardshah(props: CardshahProps) {
   return (
     <div>
       <Card className="card-shah">
-        <Card.Img variant="top" src="src/assets/images/cardpic.png" />
+        <Card.Img variant="top" src={cardImage} />
         <Card.Body>
           <Card.Title>{props.title} </Card.Title>
           <Card.Text>{props.desc}</Card.Text>

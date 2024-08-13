@@ -1,9 +1,5 @@
-import React from "react";
-import {Col, Form, InputGroup, Row } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
+import {Col, Row } from "react-bootstrap";
 import "./Mainmenu.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Cardshah from "../components/card/Cardshah";
 
 export default function Mainmenu() {
@@ -11,19 +7,6 @@ export default function Mainmenu() {
     <>
       <Row className="search-box">
         <img src="src/assets/images/logohorse.png" />
-
-        {/* <InputGroup className="search">
-        
-          <InputGroup.Text id="basic-addon1">
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </InputGroup.Text>
-
-          <Form.Control
-            placeholder="Search. . . "
-            aria-label="search"
-            aria-describedby="search"
-          />
-        </InputGroup> */}
       </Row>
 
       <Row>
@@ -39,7 +22,7 @@ export default function Mainmenu() {
           <Cardshah title="Characters" desc="Characters and features" button="see more" link="/characters"/>
         </Col>
         <Col>
-          <Cardshah title="Stories" desc="Stories" button="see more" link="/stories"/>
+          <Cardshah title="Stories" desc="Stories" button="see more" link="/stories" image={""}/>
         </Col>
       </Row>
       <Row>
