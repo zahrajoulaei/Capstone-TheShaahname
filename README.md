@@ -21,9 +21,11 @@ The Shahnameh Characters Project is designed to provide an interactive and engag
 
 Below is a rough sketch of the application's layout:
 
-![Sketch]("Frontend/src/assets/images/wireframe1.jpg")  
+![Sketch](Frontend/src/assets/images/wireframe1.jpg)  
 
-![Sketch]("Frontend/src/assets/images/wireframe2.jpg")  
+the characters page:
+
+![Sketch](Frontend/src/assets/images/wireframe2.jpg)  
 
 
 
