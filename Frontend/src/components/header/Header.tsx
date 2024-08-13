@@ -9,7 +9,7 @@ export default function Header() {
       <img className="header-img" src={horsesImage} alt="horses" />
       <div className="header-content">
         <h1>The Shaahnameh</h1>
-        <p>Your subheader text or description goes here.</p>
+        <p>The Book of Kings!</p>
       </div>
 
       <div className="header-shape-wrapper">

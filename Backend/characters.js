@@ -1,3 +1,4 @@
+//This is the Static list of characters created before adding them to database:
 // const characters = [
 //   {
 //     id: 1,

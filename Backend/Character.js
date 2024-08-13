@@ -1,11 +1,14 @@
+
+//Mongoose schema file
+
 const mongoose = require('mongoose');
 
 const characterSchema = new mongoose.Schema({
-  id: Number,
-  name: String,
+  id: { type: Number, index: true }, 
+  name: { type: String, index: true }, 
   children: [String],
-  monarchy: String,
-  age: { type: Number, required: true },
+  monarchy: { type: String, index: true }, 
+  age: { type: Number, required: true, index: true }, 
   abilities: [String],
   specialty: String,
 }, { collection: 'characters' }); 
