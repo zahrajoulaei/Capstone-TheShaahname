@@ -111,10 +111,10 @@ npm install
 
  Start the Frontend Development Server:
 
-    ```
-        cd Frontend
-        npm run dev
-    ```
+  ```
+      cd Frontend
+      npm run dev
+  ```
 
 The frontend development server will start on http://localhost:5173.
 
