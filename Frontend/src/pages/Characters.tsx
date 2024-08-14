@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/header/Header";
 import SearchChar from "../components/search/SearchChar";
-import { Col, Container, Row, Button, Modal, Form } from "react-bootstrap";
+import CharacterModal from "../components/charmodal/CharacterModal";
+import { Col, Container, Row, Button} from "react-bootstrap";
 import Sidemenu from "./Sidemenu";
 import Footer from "../components/footer/Footer";
 import Cardshah from "../components/card/Cardshah";
 import { Character } from "../types"; // Use the Character type from types.ts
 import axios from "axios";
 
+
 export default function Characters() {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [currentCharacter, setCurrentCharacter] = useState<Character | null>(null);
+  const [currentCharacter, setCurrentCharacter] = useState<Character | null>(
+    null
+  );
   const [formValues, setFormValues] = useState({
     name: "",
     monarchy: "",
@@ -22,8 +26,7 @@ export default function Characters() {
     specialty: "",
   });
 
-  const baseURL = 'http://localhost:3000'
-
+  const baseURL = "http://localhost:3000";
 
   useEffect(() => {
     fetchCharacters();
@@ -32,12 +35,12 @@ export default function Characters() {
   const fetchCharacters = async () => {
     try {
       const response = await fetch(`${baseURL}/api/characters`);
-   
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data: Character[] = await response.json();
-      console.log("data:", data)
+      console.log("data:", data);
       setCharacters(data);
       setLoading(false);
     } catch (error) {
@@ -92,34 +95,38 @@ export default function Characters() {
   const handleSubmit = async () => {
     const characterData = {
       ...formValues,
-      age: parseInt(formValues.age), 
-      abilities: formValues.abilities.split(",").map((ability) => ability.trim()), // Convert abilities to an array
+      age: parseInt(formValues.age),
+      abilities: formValues.abilities
+        .split(",")
+        .map((ability) => ability.trim()), // Convert abilities to an array
     };
 
     try {
       let response;
       if (currentCharacter) {
         // Edit character
-        response = await fetch(`${baseURL}/api/characters/${currentCharacter._id}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(characterData),
-        });
+        response = await fetch(
+          `${baseURL}/api/characters/${currentCharacter._id}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(characterData),
+          }
+        );
       } else {
-  
         response = await axios({
           url: `${baseURL}/api/characters`,
           method: "POST",
-          data: characterData
-        })
+          data: characterData,
+        });
 
-        console.log(response)
+        console.log(response);
       }
 
       if (response.status != 200) {
-        console.log(response)
+        console.log(response);
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
@@ -151,16 +158,20 @@ export default function Characters() {
         <Col xs={10}>
           <Row className="search-box">
             <img src="src/assets/images/logohorse.png" alt="Logo" />
-            <SearchChar characters={characters} onSearchResults={handleSearchResults} />
+            <SearchChar
+              characters={characters}
+              onSearchResults={handleSearchResults}
+            />
           </Row>
 
           <Row>
             <h4>Characters in Shahnameh</h4>
             <p>
-              Here is a selection of special characters from the Shahnameh, a timeless epic filled
-              with over a hundred unique figures, each with their own remarkable abilities. Right
-              now, some of these characters are listed below, giving you a glimpse into the rich world
-              of this legendary story.
+              Here is a selection of special characters from the Shahnameh, a
+              timeless epic filled with over a hundred unique figures, each with
+              their own remarkable abilities. Right now, some of these
+              characters are listed below, giving you a glimpse into the rich
+              world of this legendary story.
             </p>
           </Row>
 
@@ -205,68 +216,14 @@ export default function Characters() {
       </Row>
 
       {/* Modal for Add/Edit Character */}
-      <Modal show={showModal} onHide={() => setShowModal(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>{currentCharacter ? "Edit Character" : "Add New Character"}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter character name"
-                value={formValues.name}
-                onChange={(e) => setFormValues({ ...formValues, name: e.target.value })}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Monarchy</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter monarchy"
-                value={formValues.monarchy}
-                onChange={(e) => setFormValues({ ...formValues, monarchy: e.target.value })}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Age</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="Enter age"
-                value={formValues.age}
-                onChange={(e) => setFormValues({ ...formValues, age: e.target.value })}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Abilities</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter abilities (comma separated)"
-                value={formValues.abilities}
-                onChange={(e) => setFormValues({ ...formValues, abilities: e.target.value })}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Specialty</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter specialty"
-                value={formValues.specialty}
-                onChange={(e) => setFormValues({ ...formValues, specialty: e.target.value })}
-              />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal(false)}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleSubmit}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <CharacterModal
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        formValues={formValues}
+        setFormValues={setFormValues}
+        onSubmit={handleSubmit}
+        isEditing={!!currentCharacter}
+      />
     </Container>
   );
 }

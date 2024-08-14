@@ -4,13 +4,13 @@
 const mongoose = require('mongoose');
 
 const characterSchema = new mongoose.Schema({
-  id:{type: String},
-  name: { type: String, index: true }, 
-  children: {type: [String]},
-  monarchy: { type: String, index: true }, 
-  age: { type: Number, required: true, index: true }, 
-  abilities: {type: [String]},
-  specialty: {type: String},
+  id:{type: String , default:"333"},
+  name: { type: String, index: true , default:"Zahra" }, 
+  children: {type: [String], default:"none"},
+  monarchy: { type: String, index: true , default:"king"}, 
+  age: { type: Number, required: true, index: true , default:"34"}, 
+  abilities: {type: [String],default:"inivisblity"},
+  specialty: {type: String,default:"none"},
 }); 
 
 const Character = mongoose.model('Character', characterSchema);

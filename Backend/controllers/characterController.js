@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 // Controller to handle GET requests to fetch characters
 exports.getCharacters = async (req, res) => {
+  console.log("hiiii")
   try {
     const { name, monarchy, age } = req.query;
     let query = {};
@@ -23,16 +24,16 @@ exports.getCharacters = async (req, res) => {
 // Controller to handle POST requests to create a new character
 exports.createCharacter = async (req, res) => {
   const { id, name, monarchy,children, age, abilities, specialty } = req.body;
-
+  console.log("HIIII",req.body)
   if (!id, !name || !monarchy || !children || !age || !abilities || !specialty) {
     return res.status(400).json({ error: "All fields are required" });
   }
 
-  if (Array.isArray(req.body)) {
-    const character = await Character.insertMany(req.body);
-    res.status(201).json({ character });
-    return;
-  } 
+  // if (Array.isArray(req.body)) {
+  //   const character = await Character.insertMany(req.body);
+  //   res.status(201).json({ character });
+  //   return;
+  // } 
 
   // try {
   //   const newCharacter = new Character({
