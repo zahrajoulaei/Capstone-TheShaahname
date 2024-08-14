@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     res.send("Welcome to the Shaahnameh API!");
 });
 
-// Character routes
+// Character routes 
 router.get('/characters', getCharacters);
 router.post('/characters', createCharacter);
 router.patch('/characters/:id', updateCharacter);

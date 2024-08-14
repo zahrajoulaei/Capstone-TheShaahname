@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 
 interface Character {
+  _id: any;
   id: number;
   name: string;
   children: string[];

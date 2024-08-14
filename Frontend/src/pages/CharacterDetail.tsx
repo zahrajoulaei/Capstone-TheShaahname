@@ -19,7 +19,8 @@ export default function CharacterDetail() {
     return <div>Error: Character ID is missing</div>;
   }
 
-  const character = characters.find((char) => char.id === parseInt(id));
+  // const character = characters.find((char) => char.id === parseInt(id));
+  const character = characters.find((char) => char._id === id);
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -58,29 +59,25 @@ export default function CharacterDetail() {
             <p>Specialty: {character.specialty}</p>
             <p>Children: {character.children}</p>
 
-
-
             <div className="navigation-links">
-            {previousCharacter && (
-              <Link
-                to={`/characters/${previousCharacter.id}`}
-                className="btn btn-primary"
-              >
-                Previous: {previousCharacter.name}
-              </Link>
-            )}
-            {nextCharacter && (
-              <Link
-                to={`/characters/${nextCharacter.id}`}
-                className="btn btn-primary ml-2"
-              >
-                Next: {nextCharacter.name}
-              </Link>
-            )}
+              {previousCharacter && (
+                <Link
+                  to={`/characters/${previousCharacter._id}`} // Use _id here
+                  className="btn btn-primary"
+                >
+                  Previous: {previousCharacter.name}
+                </Link>
+              )}
+              {nextCharacter && (
+                <Link
+                  to={`/characters/${nextCharacter._id}`} // Use _id here
+                  className="btn btn-primary ml-2"
+                >
+                  Next: {nextCharacter.name}
+                </Link>
+              )}
+            </div>
           </div>
-          </div>
-
-     
         </Col>
       </Row>
 

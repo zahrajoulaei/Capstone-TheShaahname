@@ -47,15 +47,19 @@ exports.createCharacter = async (req, res) => {
 };
 
 // Controller to handle PATCH requests to update an existing character by ID
-
 exports.updateCharacter = async (req, res) => {
   const { id } = req.params;
   const updateData = req.body;
 
   try {
+    // Log the ID and the data being updated for debugging purposes
+    console.log(`Updating character with ID: ${id}`);
+    console.log(`Update data: ${JSON.stringify(updateData)}`);
+
     const updatedCharacter = await Character.findByIdAndUpdate(id, updateData, {
       new: true,
     });
+
     if (!updatedCharacter) {
       return res.status(404).json({ error: "Character not found" });
     }
@@ -67,11 +71,14 @@ exports.updateCharacter = async (req, res) => {
 };
 
 // Controller to handle DELETE requests to remove a character by ID
-
 exports.deleteCharacter = async (req, res) => {
   const { id } = req.params;
 
   try {
+    // Log the ID to ensure it's being passed correctly
+    console.log(`Deleting character with ID: ${id}`);
+
+    // Attempt to delete the character by ID
     const deletedCharacter = await Character.findByIdAndDelete(id);
 
     if (!deletedCharacter) {

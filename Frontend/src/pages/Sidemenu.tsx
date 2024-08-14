@@ -71,7 +71,7 @@ export default function Sidemenu() {
         <li>
           <FontAwesomeIcon icon={faBookOpen} />
 
-          <Link to="/gallery" className="link-class">
+          <Link to="/educate" className="link-class">
             <span> Educate</span>
           </Link>
         </li>
@@ -79,7 +79,7 @@ export default function Sidemenu() {
         <li>
           <FontAwesomeIcon icon={faShop} />
 
-          <Link to="/gallery" className="link-class">
+          <Link to="/store" className="link-class">
             <span> Store</span>
           </Link>
         </li>
@@ -87,7 +87,7 @@ export default function Sidemenu() {
         <li>
           <FontAwesomeIcon icon={faHeart} />
 
-          <Link to="/gallery" className="link-class">
+          <Link to="/favorites" className="link-class">
             <span> Favorites</span>
           </Link>
         </li>
