@@ -6,7 +6,10 @@ require("dotenv").config();
 //Function to establish a connection to the MongoDB database
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.ATLAS_URI);
+    const options = {
+      dbName: "ferdowsi"
+    }
+    await mongoose.connect(process.env.ATLAS_URI, options);
     console.log("Connected to MongoDB");
   } catch (err) {
     console.error("Failed to connect to MongoDB", err);

@@ -1,13 +1,13 @@
 //This is the Static list of characters created before adding them to database:
 // const characters = [
 //   {
-//     id: 1,
-//     name: "Rostam",
-//     children: ["Sohrab"],
-//     monarchy: "None",
-//     age: 500,
-//     abilities: ["Superhuman strength", "Skilled warrior", "Tactician"],
-//     specialty: "Hero of Iran, Defender of the Iranian kings",
+//     "id": 1,
+//     "name": "Rostam",
+//    "children": ["Sohrab"],
+//     "monarchy": "None",
+//     "age": 500,
+//     "abilities": ["Superhuman strength", "Skilled warrior", "Tactician"],
+//     "specialty": "Hero of Iran, Defender of the Iranian kings",
 //   },
 //   {
 //     id: 2,
@@ -437,3 +437,252 @@
 // ];
 
 // module.exports = characters;
+
+
+
+
+[
+    {
+      "id": 1,
+      "name": "Rostam",
+      "children": ["Sohrab"],
+      "monarchy": "None",
+      "age": 500,
+      "abilities": ["Superhuman strength", "Skilled warrior", "Tactician"],
+      "specialty": "Hero of Iran, Defender of the Iranian kings"
+    },
+    {
+      "id": 2,
+      "name": "Sohrab",
+      "children": [],
+      "monarchy": "None",
+      "age": 18,
+      "abilities": ["Exceptional strength", "Bravery"],
+      "specialty": "Son of Rostam, Tragic Hero"
+    },
+    {
+      "id": 3,
+      "name": "Zahhak",
+      "children": [],
+      "monarchy": "King of Persia",
+      "age": 1000,
+      "abilities": ["Sorcery", "Immortality"],
+      "specialty": "Tyrant king, Snakes on shoulders"
+    },
+    {
+      "id": 4,
+      "name": "Kay Kavus",
+      "children": ["Siyavash", "Fereydun"],
+      "monarchy": "King of Persia",
+      "age": 150,
+      "abilities": ["Leadership", "Wisdom"],
+      "specialty": "King of Persia, Lost his throne due to arrogance"
+    },
+    {
+      "id": 5,
+      "name": "Esfandiyār",
+      "children": ["Bahman"],
+      "monarchy": "Prince of Persia",
+      "age": 37,
+      "abilities": ["Invulnerability (except for his eyes)", "Warrior"],
+      "specialty": "Tragic hero, son of Goshtasp"
+    },
+    {
+      "id": 6,
+      "name": "Tahmina",
+      "children": ["Sohrab"],
+      "monarchy": "None",
+      "age": 35,
+      "abilities": ["Persuasive", "Cunning"],
+      "specialty": "Mother of Sohrab, wife of Rostam"
+    },
+    {
+      "id": 7,
+      "name": "Zal",
+      "children": ["Rostam"],
+      "monarchy": "None",
+      "age": 400,
+      "abilities": ["Wisdom", "Mentorship"],
+      "specialty": "Father of Rostam, raised by Simurgh"
+    },
+    {
+      "id": 8,
+      "name": "Simurgh",
+      "children": [],
+      "monarchy": "None",
+      "age": "Unknown (immortal)",
+      "abilities": ["Healing", "Flight", "Immense knowledge"],
+      "specialty": "Mythical bird, savior of Zal and Rostam"
+    },
+    {
+      "id": 9,
+      "name": "Kay Khosrow",
+      "children": [],
+      "monarchy": "King of Persia",
+      "age": 45,
+      "abilities": ["Divine wisdom", "Just leadership"],
+      "specialty": "Most righteous king, known for his wisdom and justice"
+    },
+    {
+      "id": 10,
+      "name": "Afrasiab",
+      "children": ["Shideh", "Arjasp"],
+      "monarchy": "King of Turan",
+      "age": 70,
+      "abilities": ["Military strategy", "Leadership"],
+      "specialty": "Arch-enemy of Iran, ruler of Turan"
+    },
+    {
+      "id": 11,
+      "name": "Gordafarid",
+      "children": [],
+      "monarchy": "None",
+      "age": 25,
+      "abilities": ["Warrior", "Bravery"],
+      "specialty": "Female warrior, defender of her people"
+    },
+    {
+      "id": 12,
+      "name": "Bijan",
+      "children": [],
+      "monarchy": "None",
+      "age": 30,
+      "abilities": ["Strength", "Skill in battle"],
+      "specialty": "Lover of Manijeh, hero of Iran"
+    },
+    {
+      "id": 13,
+      "name": "Manijeh",
+      "children": [],
+      "monarchy": "Princess of Turan",
+      "age": 28,
+      "abilities": ["Loyalty", "Courage"],
+      "specialty": "Lover of Bijan, daughter of Afrasiab"
+    },
+    {
+      "id": 14,
+      "name": "Fereydun",
+      "children": ["Iraj", "Salm", "Tur"],
+      "monarchy": "King of Persia",
+      "age": 200,
+      "abilities": ["Justice", "Strength"],
+      "specialty": "Slayer of Zahhak, righteous king"
+    },
+    {
+      "id": 15,
+      "name": "Iraj",
+      "children": ["Manuchehr"],
+      "monarchy": "Prince of Persia",
+      "age": 25,
+      "abilities": ["Gentleness", "Wisdom"],
+      "specialty": "Youngest son of Fereydun, symbol of innocence"
+    },
+    {
+      "id": 16,
+      "name": "Siyâvash",
+      "children": ["Kay Khosrow"],
+      "monarchy": "Prince of Persia",
+      "age": 30,
+      "abilities": ["Purity", "Martial skills"],
+      "specialty": "Tragic hero, symbol of innocence and purity"
+    },
+    {
+      "id": 17,
+      "name": "Fariborz",
+      "children": [],
+      "monarchy": "Prince of Persia",
+      "age": 50,
+      "abilities": ["Diplomacy", "Leadership"],
+      "specialty": "Son of Kay Kavus, supporter of Kay Khosrow"
+    },
+    {
+      "id": 18,
+      "name": "Giv",
+      "children": ["Bizhan"],
+      "monarchy": "None",
+      "age": 60,
+      "abilities": ["Loyalty", "Bravery"],
+      "specialty": "Faithful warrior of Kay Khosrow"
+    },
+    {
+      "id": 19,
+      "name": "Bizhan",
+      "children": [],
+      "monarchy": "None",
+      "age": 35,
+      "abilities": ["Strength", "Bravery"],
+      "specialty": "Hero of the tale of Bijan and Manijeh"
+    },
+    {
+      "id": 20,
+      "name": "Rudaba",
+      "children": ["Rostam"],
+      "monarchy": "None",
+      "age": 40,
+      "abilities": ["Beauty", "Wisdom"],
+      "specialty": "Mother of Rostam, wife of Zal"
+    },
+    {
+      "id": 21,
+      "name": "Sudabeh",
+      "children": [],
+      "monarchy": "Queen of Persia",
+      "age": 40,
+      "abilities": ["Deception", "Manipulation"],
+      "specialty": "Wife of Kay Kavus, instigator of Siyavash's tragedy"
+    },
+    {
+      "id": 22,
+      "name": "Jamshid",
+      "children": [],
+      "monarchy": "King of Persia",
+      "age": 700,
+      "abilities": ["Inventor", "King"],
+      "specialty": "Legendary king, lost his throne due to arrogance"
+    },
+    {
+      "id": 23,
+      "name": "Garshasp",
+      "children": [],
+      "monarchy": "None",
+      "age": 90,
+      "abilities": ["Warrior", "Strength"],
+      "specialty": "Great warrior of the Persian army"
+    },
+    {
+      "id": 24,
+      "name": "Nariman",
+      "children": ["Sam"],
+      "monarchy": "None",
+      "age": 100,
+      "abilities": ["Strength", "Wisdom"],
+      "specialty": "Ancestor of Rostam, great warrior"
+    },
+    {
+      "id": 25,
+      "name": "Sam",
+      "children": ["Zal"],
+      "monarchy": "None",
+      "age": 120,
+      "abilities": ["Strength", "Bravery"],
+      "specialty": "Father of Zal, grandfather of Rostam"
+    },
+    {
+      "id": 26,
+      "name": "Kaveh",
+      "children": [],
+      "monarchy": "None",
+      "age": 50,
+      "abilities": ["Leadership", "Courage"],
+      "specialty": "Blacksmith who led a rebellion against Zahhak"
+    },
+    {
+      "id": 27,
+      "name": "Bahram",
+      "children": [],
+      "monarchy": "None",
+      "age": 70,
+      "abilities": ["Archery", "Strategy"],
+      "specialty": "Warrior known for his archery skills"
+    },
+]

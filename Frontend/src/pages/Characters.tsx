@@ -7,7 +7,7 @@ import Footer from "../components/footer/Footer";
 import Cardshah from "../components/card/Cardshah";
 import { Character } from "../types"; // Use the Character type from types.ts
 
-export default function Charachters() {
+export default function Characters() {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
