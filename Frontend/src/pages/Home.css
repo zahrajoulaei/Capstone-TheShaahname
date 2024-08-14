@@ -10,6 +10,17 @@
     padding: 0;
 }
 
+.component-wrapper{
+  background-color: #fafafa;
+  padding: 20px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 @media (max-width: 768px) {
   .header-image {
     object-position: center;

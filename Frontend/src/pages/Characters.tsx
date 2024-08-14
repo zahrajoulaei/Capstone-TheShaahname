@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/header/Header";
 import SearchChar from "../components/search/SearchChar";
 import CharacterModal from "../components/charmodal/CharacterModal";
-import { Col, Container, Row, Button} from "react-bootstrap";
+import { Col, Container, Row, Button } from "react-bootstrap";
 import Sidemenu from "./Sidemenu";
 import Footer from "../components/footer/Footer";
 import Cardshah from "../components/card/Cardshah";
 import { Character } from "../types"; // Use the Character type from types.ts
 import axios from "axios";
-
 
 export default function Characters() {
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -92,48 +91,113 @@ export default function Characters() {
     setShowModal(true);
   };
 
-  const handleSubmit = async () => {
+  // const handleSubmit = async () => {
+  //   const characterData = {
+  //     ...formValues,
+  //     age: parseInt(formValues.age),
+  //     abilities: formValues.abilities
+  //       .split(",")
+  //       .map((ability) => ability.trim()), // Convert abilities to an array
+  //   };
+
+  //   try {
+  //     let response;
+  //     if (currentCharacter) {
+  //       // Edit character
+  //       response = await fetch(
+  //         `${baseURL}/api/characters/${currentCharacter._id}`,
+  //         {
+  //           method: "PATCH",
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //           body: JSON.stringify(characterData),
+  //         }
+  //       );
+  //     } else {
+  //       response = await axios({
+  //         url: `${baseURL}/api/characters`,
+  //         method: "POST",
+  //         data: characterData,
+  //       });
+
+  //       console.log(response);
+  //     }
+
+  //     if (response.status != 200) {
+  //       console.log(response);
+  //       throw new Error(`HTTP error! status: ${response.status}`);
+  //     }
+
+  //     fetchCharacters();
+  //     setShowModal(false);
+  //   } catch (error) {
+  //     console.error("Error saving character:", error);
+  //   }
+  // };
+
+  const handleAddCharacter = async () => {
+    if (!formValues.name || !formValues.monarchy || !formValues.age || !formValues.abilities || !formValues.specialty) {
+      console.error("All fields are required");
+      return;
+    }
+  
+    const characterData = {
+      ...formValues,
+      age: parseInt(formValues.age),
+      abilities: formValues.abilities.split(",").map((ability) => ability.trim()),
+    };
+  
+    try {
+      const response = await axios.post(
+        `${baseURL}/api/characters`,
+        characterData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+  
+      if (response.status !== 200) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+  
+      fetchCharacters();
+      setShowModal(false);
+    } catch (error) {
+      console.error("Error adding character:", error);
+    }
+  };
+  const handleEditCharacter = async () => {
     const characterData = {
       ...formValues,
       age: parseInt(formValues.age),
       abilities: formValues.abilities
         .split(",")
-        .map((ability) => ability.trim()), // Convert abilities to an array
+        .map((ability) => ability.trim()),
     };
 
     try {
-      let response;
-      if (currentCharacter) {
-        // Edit character
-        response = await fetch(
-          `${baseURL}/api/characters/${currentCharacter._id}`,
-          {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(characterData),
-          }
-        );
-      } else {
-        response = await axios({
-          url: `${baseURL}/api/characters`,
-          method: "POST",
-          data: characterData,
-        });
+      const response = await fetch(
+        `${baseURL}/api/characters/${currentCharacter?._id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(characterData),
+        }
+      );
 
-        console.log(response);
-      }
-
-      if (response.status != 200) {
-        console.log(response);
+      if (response.status !== 200) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       fetchCharacters();
       setShowModal(false);
     } catch (error) {
-      console.error("Error saving character:", error);
+      console.error("Error editing character:", error);
     }
   };
 
@@ -221,8 +285,9 @@ export default function Characters() {
         onHide={() => setShowModal(false)}
         formValues={formValues}
         setFormValues={setFormValues}
-        onSubmit={handleSubmit}
+        onSubmit={currentCharacter ? handleEditCharacter : handleAddCharacter}
         isEditing={!!currentCharacter}
+        currentCharacter={currentCharacter} // Pass currentCharacter as a prop
       />
     </Container>
   );

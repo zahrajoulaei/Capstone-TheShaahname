@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, Button, Form } from "react-bootstrap";
+import { Character } from "../../types";
 
 interface CharacterModalProps {
   show: boolean;
@@ -22,7 +23,10 @@ interface CharacterModalProps {
   >;
   onSubmit: () => void;
   isEditing: boolean;
+  currentCharacter: Character | null; // Add currentCharacter to the interface
+
 }
+
 
 export default function CharacterModal({
   show,
