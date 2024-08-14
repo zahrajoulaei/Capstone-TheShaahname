@@ -19,7 +19,7 @@ export default function Favorites() {
           <Sidemenu />
         </Col>
         <Col xs={10}>
-        faves
+        favorites
         </Col>
       </Row>
 
