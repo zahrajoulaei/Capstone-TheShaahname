@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import Header from "../components/header/Header";
 import SearchChar from "../components/search/SearchChar";
 import CharacterModal from "../components/charmodal/CharacterModal";
