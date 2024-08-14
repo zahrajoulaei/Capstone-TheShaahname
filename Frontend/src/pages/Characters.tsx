@@ -6,6 +6,7 @@ import Sidemenu from "./Sidemenu";
 import Footer from "../components/footer/Footer";
 import Cardshah from "../components/card/Cardshah";
 import { Character } from "../types"; // Use the Character type from types.ts
+import axios from "axios";
 
 export default function Characters() {
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -21,17 +22,22 @@ export default function Characters() {
     specialty: "",
   });
 
+  const baseURL = 'http://localhost:3000'
+
+
   useEffect(() => {
     fetchCharacters();
   }, []);
 
   const fetchCharacters = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/characters");
+      const response = await fetch(`${baseURL}/api/characters`);
+   
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data: Character[] = await response.json();
+      console.log("data:", data)
       setCharacters(data);
       setLoading(false);
     } catch (error) {
@@ -47,7 +53,7 @@ export default function Characters() {
 
   const handleDelete = async (id: any) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/characters/${id}`, {
+      const response = await fetch(`${baseURL}/api/characters/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {
@@ -94,7 +100,7 @@ export default function Characters() {
       let response;
       if (currentCharacter) {
         // Edit character
-        response = await fetch(`http://localhost:3000/api/characters/${currentCharacter._id}`, {
+        response = await fetch(`${baseURL}/api/characters/${currentCharacter._id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -102,17 +108,18 @@ export default function Characters() {
           body: JSON.stringify(characterData),
         });
       } else {
-        // Add new character
-        response = await fetch(`http://localhost:3000/api/characters`, {
+  
+        response = await axios({
+          url: `${baseURL}/api/characters`,
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(characterData),
-        });
+          data: characterData
+        })
+
+        console.log(response)
       }
 
-      if (!response.ok) {
+      if (response.status != 200) {
+        console.log(response)
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
