@@ -1,4 +1,3 @@
-import React from "react";
 import "./Header.css";
 import { Col } from "react-bootstrap";
 import horsesImage from "../../assets/images/horses.png";

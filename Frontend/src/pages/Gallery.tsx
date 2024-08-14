@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../components/header/Header";
 import { Col, Container, Row, Figure } from "react-bootstrap";
 import Sidemenu from "./Sidemenu";
