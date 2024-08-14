@@ -68,7 +68,7 @@
 //     name: "Simurgh",
 //     children: [],
 //     monarchy: "None",
-//     age: "Unknown (immortal)",
+//     age: "10000",
 //     abilities: ["Healing", "Flight", "Immense knowledge"],
 //     specialty: "Mythical bird, savior of Zal and Rostam",
 //   },
@@ -424,16 +424,8 @@
 //     age: 35,
 //     abilities: ["Persuasive", "Cunning"],
 //     specialty: "Mother of Sohrab, wife of Rostam",
-//   },
-//   {
-//     id: 48,
-//     name: "Simurgh",
-//     children: [],
-//     monarchy: "None",
-//     age: "Unknown (immortal)",
-//     abilities: ["Healing", "Flight", "Immense knowledge"],
-//     specialty: "Mythical bird, savior of Zal and Rostam",
-//   },
+//   }
+// 
 // ];
 
 // module.exports = characters;
@@ -505,15 +497,7 @@
 //       "abilities": ["Wisdom", "Mentorship"],
 //       "specialty": "Father of Rostam, raised by Simurgh"
 //     },
-//     {
-//       "id": 8,
-//       "name": "Simurgh",
-//       "children": [],
-//       "monarchy": "None",
-//       "age": "Unknown (immortal)",
-//       "abilities": ["Healing", "Flight", "Immense knowledge"],
-//       "specialty": "Mythical bird, savior of Zal and Rostam"
-//     },
+//   
 //     {
 //       "id": 9,
 //       "name": "Kay Khosrow",
