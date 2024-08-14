@@ -12,4 +12,12 @@ export default defineConfig({
       },
     },
   },
+  optimizeDeps: {
+    include: ['bootstrap/dist/css/bootstrap.min.css'],  // Add this line
+  },
+  build: {
+    rollupOptions: {
+      external: ['bootstrap/dist/css/bootstrap.min.css'],  // Add this line
+    },
+  },
 });
