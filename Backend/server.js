@@ -1,4 +1,3 @@
-
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
@@ -19,7 +18,7 @@ connectDB();
 // Use the character routes
 app.use('/api', characterRoutes);  
 
-// Error Handling Middleware
+// Error Handling Middleware 
 app.use(errorHandler);
 
 // Start Server

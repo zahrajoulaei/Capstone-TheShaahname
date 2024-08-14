@@ -1,8 +1,8 @@
-// Import the Character model to interact with the characters collection in MongoDB
 const Character = require("../models/Character");
+const mongoose = require('mongoose');
+
 
 // Controller to handle GET requests to fetch characters
-// Supports optional filtering by name, monarchy, or age using query parameters
 exports.getCharacters = async (req, res) => {
   try {
     const { name, monarchy, age } = req.query;
@@ -15,8 +15,8 @@ exports.getCharacters = async (req, res) => {
     const characters = await Character.find(query);
     res.json(characters);
   } catch (err) {
-    console.error("Server Error:", err);
-    res.status(500).send("Server Error");
+    console.error("Error fetching characters:", err);
+    res.status(500).json({ error: "Failed to fetch characters" });
   }
 };
 
@@ -24,13 +24,11 @@ exports.getCharacters = async (req, res) => {
 exports.createCharacter = async (req, res) => {
   const { name, monarchy, age, abilities, specialty } = req.body;
 
-  // Validate that all required fields are provided
   if (!name || !monarchy || !age || !abilities || !specialty) {
     return res.status(400).json({ error: "All fields are required" });
   }
 
   try {
-    // Create a new Character instance with the provided data
     const newCharacter = new Character({
       name,
       monarchy,
@@ -41,7 +39,7 @@ exports.createCharacter = async (req, res) => {
     await newCharacter.save();
     res.status(201).json(newCharacter);
   } catch (err) {
-    console.error("Server Error:", err);
+    console.error("Error creating character:", err);
     res.status(500).send("Server Error");
   }
 };
@@ -52,10 +50,6 @@ exports.updateCharacter = async (req, res) => {
   const updateData = req.body;
 
   try {
-    // Log the ID and the data being updated for debugging purposes
-    console.log(`Updating character with ID: ${id}`);
-    console.log(`Update data: ${JSON.stringify(updateData)}`);
-
     const updatedCharacter = await Character.findByIdAndUpdate(id, updateData, {
       new: true,
     });
@@ -65,7 +59,7 @@ exports.updateCharacter = async (req, res) => {
     }
     res.json(updatedCharacter);
   } catch (err) {
-    console.error("Server Error:", err);
+    console.error("Error updating character:", err);
     res.status(500).send("Server Error");
   }
 };
@@ -73,21 +67,19 @@ exports.updateCharacter = async (req, res) => {
 // Controller to handle DELETE requests to remove a character by ID
 exports.deleteCharacter = async (req, res) => {
   const { id } = req.params;
+  console.log(`Attempting to delete character with ID: ${id}`);
 
   try {
-    // Log the ID to ensure it's being passed correctly
-    console.log(`Deleting character with ID: ${id}`);
-
-    // Attempt to delete the character by ID
     const deletedCharacter = await Character.findByIdAndDelete(id);
 
     if (!deletedCharacter) {
+      console.log(`Character with ID ${id} not found.`);
       return res.status(404).json({ error: "Character not found" });
     }
 
     res.json({ message: "Character deleted successfully" });
   } catch (err) {
-    console.error("Server Error:", err);
+    console.error("Error deleting character:", err);
     res.status(500).send("Server Error");
   }
 };

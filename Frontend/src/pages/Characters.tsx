@@ -45,7 +45,7 @@ export default function Charachters() {
     setCharacters(searchResults); // Update characters with search results
   };
 
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (id: any) => {
     try {
       const response = await fetch(`http://localhost:3000/api/characters/${id}`, {
         method: "DELETE",
@@ -152,7 +152,7 @@ export default function Charachters() {
             <p>
               Here is a selection of special characters from the Shahnameh, a timeless epic filled
               with over a hundred unique figures, each with their own remarkable abilities. Right
-              now, 48 of these characters are listed below, giving you a glimpse into the rich world
+              now, some of these characters are listed below, giving you a glimpse into the rich world
               of this legendary story.
             </p>
           </Row>
@@ -179,6 +179,7 @@ export default function Charachters() {
                 >
                   Edit
                 </Button>
+                {/* //TODO: id here */}
                 <Button
                   variant="danger"
                   className="mt-2 ms-2"
