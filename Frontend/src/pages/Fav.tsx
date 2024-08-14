@@ -19,6 +19,7 @@ export default function Favorites() {
         </Col>
         <Col xs={10}>
         favorites
+        SSSSSS
         </Col>
       </Row>
 
