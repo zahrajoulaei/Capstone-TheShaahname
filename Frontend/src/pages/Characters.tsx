@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/header/Header";
 import SearchChar from "../components/search/SearchChar";
 import CharacterModal from "../components/charmodal/CharacterModal";
@@ -26,11 +26,13 @@ export default function Characters() {
   });
 
   const baseURL = "http://localhost:3000";
+  // const baseURL = "the url after deployment";
 
   useEffect(() => {
     fetchCharacters();
   }, []);
 
+  //Fetch all the characters
   const fetchCharacters = async () => {
     try {
       const response = await fetch(`${baseURL}/api/characters`);
@@ -39,7 +41,6 @@ export default function Characters() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data: Character[] = await response.json();
-      console.log("data:", data);
       setCharacters(data);
       setLoading(false);
     } catch (error) {
@@ -49,10 +50,13 @@ export default function Characters() {
     }
   };
 
+  //Search
+
   const handleSearchResults = (searchResults: Character[]) => {
     setCharacters(searchResults); // Update characters with search results
   };
 
+  //Delete
   const handleDelete = async (id: any) => {
     try {
       const response = await fetch(`${baseURL}/api/characters/${id}`, {
@@ -67,6 +71,7 @@ export default function Characters() {
     }
   };
 
+  //Edit
   const handleEdit = (character: Character) => {
     setCurrentCharacter(character);
     setFormValues({
@@ -79,6 +84,7 @@ export default function Characters() {
     setShowModal(true);
   };
 
+  //Add
   const handleAddNew = () => {
     setCurrentCharacter(null);
     setFormValues({
@@ -137,17 +143,25 @@ export default function Characters() {
   // };
 
   const handleAddCharacter = async () => {
-    if (!formValues.name || !formValues.monarchy || !formValues.age || !formValues.abilities || !formValues.specialty) {
+    if (
+      !formValues.name ||
+      !formValues.monarchy ||
+      !formValues.age ||
+      !formValues.abilities ||
+      !formValues.specialty
+    ) {
       console.error("All fields are required");
       return;
     }
-  
+
     const characterData = {
       ...formValues,
       age: parseInt(formValues.age),
-      abilities: formValues.abilities.split(",").map((ability) => ability.trim()),
+      abilities: formValues.abilities
+        .split(",")
+        .map((ability) => ability.trim()),
     };
-  
+
     try {
       const response = await axios.post(
         `${baseURL}/api/characters`,
@@ -158,17 +172,19 @@ export default function Characters() {
           },
         }
       );
-  
+
       if (response.status !== 200) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-  
+
       fetchCharacters();
       setShowModal(false);
     } catch (error) {
       console.error("Error adding character:", error);
     }
   };
+
+  //Edit
   const handleEditCharacter = async () => {
     const characterData = {
       ...formValues,
