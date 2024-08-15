@@ -54,17 +54,10 @@ export default function CharacterDetail() {
               alt={character.name}
             /> */}
 
-              <img
-              src={
-                "https://via.placeholder.com/300" 
-               
-              }
+<img
+              src={"https://via.placeholder.com/300"}
               alt={character.name}
             />
-
-            
-
-
             <p>Monarchy: {character.monarchy}</p>
             <p>Age: {character.age}</p>
             <p>Abilities: {character.abilities.join(", ")}</p>
@@ -74,7 +67,7 @@ export default function CharacterDetail() {
             <div className="navigation-links">
               {previousCharacter && (
                 <Link
-                  to={`/characters/${previousCharacter._id}`} // Use _id here
+                  to={`/characters/${previousCharacter._id}`}
                   className="btn btn-primary"
                 >
                   Previous: {previousCharacter.name}
@@ -82,7 +75,7 @@ export default function CharacterDetail() {
               )}
               {nextCharacter && (
                 <Link
-                  to={`/characters/${nextCharacter._id}`} // Use _id here
+                  to={`/characters/${nextCharacter._id}`}
                   className="btn btn-primary ml-2"
                 >
                   Next: {nextCharacter.name}

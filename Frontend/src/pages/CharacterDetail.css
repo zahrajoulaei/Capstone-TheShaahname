@@ -1,13 +1,56 @@
-.CharDetailCard {
-    background-color: #FAFAFA ;
-}
-.CharDetailCard img {
-    width: 300px;
+.CharDetailCardInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.CharDetailCardInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.CharDetailCard {
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.CharDetailCardInfo h2 {
+  margin-bottom: 20px;
+  color: #343a40; 
+}
+
+.CharDetailCardInfo img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.CharDetailCardInfo p {
+  font-size: 16px;
+  color: #495057;
+  margin-bottom: 10px;
+}
+
+.navigation-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.navigation-links .btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.navigation-links .btn:hover {
+  background-color: #0056b3; 
+}
+
+.navigation-links .ml-2 {
+  margin-left: 10px;
 }
