@@ -25,7 +25,7 @@ export default function Blog() {
                   <Card>
                     <Card.Img
                       variant="top"
-                      src="https://via.placeholder.com/300x200"
+                       src="src/assets/images/shah1.jpg"
                     />
                     <Card.Body>
                       <Card.Title>Exploring the Myths of Shahnameh</Card.Title>
@@ -43,7 +43,7 @@ export default function Blog() {
                   <Card>
                     <Card.Img
                       variant="top"
-                      src="https://via.placeholder.com/300x200"
+                       src="src/assets/images/shah1.jpg"
                     />
                     <Card.Body>
                       <Card.Title>The Tragic Tale of Sohrab</Card.Title>
@@ -61,7 +61,7 @@ export default function Blog() {
                   <Card>
                     <Card.Img
                       variant="top"
-                      src="https://via.placeholder.com/300x200"
+                      src="src/assets/images/shah1.jpg"
                     />
                     <Card.Body>
                       <Card.Title>

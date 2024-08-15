@@ -21,7 +21,7 @@ export default function Stories() {
         <Col xs={10}>
           <div className="component-wrapper">
             <img
-              src="https://via.placeholder.com/300"
+               src="src/assets/images/shah1.jpg"
               alt="Placeholder"
               style={{ marginBottom: "20px" }}
             />

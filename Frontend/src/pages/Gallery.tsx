@@ -24,7 +24,7 @@ export default function Gallery() {
                   width={400}
                   height={300}
                   alt="Placeholder"
-                  src="https://via.placeholder.com/400x300"
+                  src="src/assets/images/book.jpg"
                 />
                 <Figure.Caption>
                   Caption for first image.
@@ -37,7 +37,7 @@ export default function Gallery() {
                   width={400}
                   height={300}
                   alt="Placeholder"
-                  src="https://via.placeholder.com/400x300"
+                  src="src/assets/images/shah1.jpg"
                 />
                 <Figure.Caption>
                   Caption for second image.
@@ -50,7 +50,7 @@ export default function Gallery() {
                   width={400}
                   height={300}
                   alt="Placeholder"
-                  src="https://via.placeholder.com/400x300"
+                 src="src/assets/images/book.jpg"
                 />
                 <Figure.Caption>
                   Caption for third image.
@@ -66,7 +66,7 @@ export default function Gallery() {
                   width={500}
                   height={350}
                   alt="Placeholder"
-                  src="https://via.placeholder.com/500x350"
+                  src="src/assets/images/shah1.jpg"
                 />
                 <Figure.Caption>
                   Caption for fourth image.
@@ -79,7 +79,7 @@ export default function Gallery() {
                   width={500}
                   height={350}
                   alt="Placeholder"
-                  src="https://via.placeholder.com/500x350"
+                   src="src/assets/images/shah1.jpg"
                 />
                 <Figure.Caption>
                   Caption for fifth image.

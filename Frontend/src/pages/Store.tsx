@@ -18,7 +18,7 @@ export default function Store() {
         <Col xs={10}>
           <div className="component-wrapper">
             <img
-              src="https://via.placeholder.com/300"
+               src="src/assets/images/mug.jpg"
               alt="Placeholder"
               style={{ marginBottom: "20px" }}
             />

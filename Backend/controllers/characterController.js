@@ -23,10 +23,14 @@ exports.getCharacters = async (req, res) => {
 
 // Controller to handle POST requests to create a new character
 exports.createCharacter = async (req, res) => {
-  const { id, name, monarchy,children, age, abilities, specialty } = req.body;
-  if (!id, !name || !monarchy || !children || !age || !abilities || !specialty) {
-    return res.status(400).json({ error: "All fields are required" });
+
+  const {  name, monarchy,children, age, abilities, specialty } = req.body;
+  if ( !name || !monarchy || !children || !age || !abilities || !specialty) {
+    console.log("BODYYYY:",req.body)
+    return res.status(400).json({ error: "All fields are required.TESTTTTT" });
   }
+
+
 
   try {
     const newCharacter = await Character.create(req.body)

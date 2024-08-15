@@ -143,45 +143,56 @@ export default function Characters() {
   // };
 
   const handleAddCharacter = async () => {
-    if (
-      !formValues.name ||
-      !formValues.monarchy ||
-      !formValues.age ||
-      !formValues.abilities ||
-      !formValues.specialty
-    ) {
-      console.error("All fields are required");
-      return;
-    }
-
-    const characterData = {
-      ...formValues,
-      age: parseInt(formValues.age),
-      abilities: formValues.abilities
-        .split(",")
-        .map((ability) => ability.trim()),
-    };
-
-    try {
-      const response = await axios.post(
-        `${baseURL}/api/characters`,
-        characterData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
+    console.log("form values",formValues)
+    // if (
+    //   !formValues.name ||
+    //   !formValues.monarchy ||
+    //   !formValues.age ||
+    //   !formValues.abilities ||
+    //   !formValues.specialty
+    // ) {
+    //   console.error("All fields are required");
+    //   return;
+    // }
+    if(formValues.name && formValues.monarchy && formValues.age && formValues.abilities && formValues.specialty){
+      const characterData = {
+        ...formValues,
+        age: parseInt(formValues.age),
+        abilities: formValues.abilities
+          .split(",")
+          .map((ability) => ability.trim()),
+      };
+      try {
+        const response = await axios.post(
+          "http://localhost:3000/api/characters",
+          characterData,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        console.log(response.status)
+  
+        if (response.status !== 201) {
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
-      );
-
-      if (response.status !== 200) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+  
+        fetchCharacters();
+        setShowModal(false);
+      } catch (error) {
+        console.log(error)
+        console.error("Error adding character:", error);
       }
-
-      fetchCharacters();
-      setShowModal(false);
-    } catch (error) {
-      console.error("Error adding character:", error);
     }
+    else {
+           console.error("All fields are required. sdfjdslfjsdlfjdflkdj");
+      return;
+
+    }
+
+
+   
   };
 
   //Edit
