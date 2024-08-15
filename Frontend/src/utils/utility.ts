@@ -1,3 +1,7 @@
+
+// This part is related to add favorite cards but didnt meet the deadline
+
+
 // export const addFavorite = (id: any) => {
 //     let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
 //     if (!favorites.includes(id)) {

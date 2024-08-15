@@ -1,5 +1,7 @@
 //Imports the Mongoose library
 const mongoose = require("mongoose");
+
+//Uses dotenv in prject
 require("dotenv").config();
 
 
@@ -10,7 +12,7 @@ const connectDB = async () => {
       dbName: "ferdowsi"
     }
     await mongoose.connect(process.env.ATLAS_URI, options);
-    console.log("Connected to MongoDB");
+    console.log("Welcome! Connected to MongoDB");
   } catch (err) {
     console.error("Failed to connect to MongoDB", err);
 

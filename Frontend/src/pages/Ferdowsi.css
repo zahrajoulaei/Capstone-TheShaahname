@@ -39,9 +39,6 @@
 .ferdowsi-container img + .description {
   margin-bottom: 30px;
 }
-/* .ferdowsi-container ul li {
-    list-style: none;
-} */
 
 @media (max-width: 768px) {
   .ferdowsi-container {

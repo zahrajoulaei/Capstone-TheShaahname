@@ -2,17 +2,17 @@ import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CharactersContext } from "./CharactersContext";
 import "./CharacterDetail.css";
-
 import "../pages/Home.css";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
 import characterImages from "../assets/characterImages.js";
-
 import { Col, Container, Row } from "react-bootstrap";
 import Sidemenu from "./Sidemenu";
 
 export default function CharacterDetail() {
   const { id } = useParams<{ id: string }>();
+
+  //useContext hook for state management
   const { characters, loading, error } = useContext(CharactersContext);
 
   if (!id) {
@@ -46,6 +46,8 @@ export default function CharacterDetail() {
         <Col xs={10} className="CharDetailCard">
           <div className="CharDetailCardInfo">
             <h2>{character.name}</h2>
+
+            {/* //TODO: HERE Images should be stored in Firebase or some online storage */}
             <img
               src={
                 characterImages[character.name] ||
@@ -63,6 +65,8 @@ export default function CharacterDetail() {
             <p>Abilities: {character.abilities.join(", ")}</p>
             <p>Specialty: {character.specialty}</p>
             <p>Children: {character.children}</p>
+
+            {/* Shows the next And Prevoius characters */}
 
             <div className="navigation-links">
               {previousCharacter && (

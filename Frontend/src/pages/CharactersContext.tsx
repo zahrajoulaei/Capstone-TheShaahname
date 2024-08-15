@@ -1,4 +1,8 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from "react";
+
+//Context used here for global state managing
+
+//Manage and provide character data
 
 interface Character {
   _id: any;
@@ -11,6 +15,7 @@ interface Character {
   specialty: string;
 }
 
+//The shape of context value
 interface CharactersContextType {
   characters: Character[];
   loading: boolean;
@@ -23,13 +28,18 @@ export const CharactersContext = createContext<CharactersContextType>({
   error: null,
 });
 
-export const CharactersProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const CharactersProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+  // useEffect to fetch characters from API when component mounst
+
+  const baseURL = "http://localhost:3000";
   useEffect(() => {
-    fetch('http://localhost:3000/api/characters')
+    fetch(`${baseURL}/api/characters`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -41,8 +51,8 @@ export const CharactersProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         setLoading(false);
       })
       .catch((error) => {
-        console.error('Error fetching characters:', error);
-        setError('Failed to load characters');
+        console.error("Error fetching characters:", error);
+        setError("Failed to load characters");
         setLoading(false);
       });
   }, []);

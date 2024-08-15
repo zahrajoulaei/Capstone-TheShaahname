@@ -4,11 +4,11 @@ const mongoose = require('mongoose');
 
 // Controller to handle GET requests to fetch characters
 exports.getCharacters = async (req, res) => {
-  console.log("hiiii")
   try {
     const { name, monarchy, age } = req.query;
     let query = {};
 
+    //$optins: search for all charachter types(case sensitive)
     if (name) query.name = { $regex: name, $options: "i" };
     if (monarchy) query.monarchy = { $regex: monarchy, $options: "i" };
     if (age) query.age = parseInt(age);
@@ -24,33 +24,10 @@ exports.getCharacters = async (req, res) => {
 // Controller to handle POST requests to create a new character
 exports.createCharacter = async (req, res) => {
   const { id, name, monarchy,children, age, abilities, specialty } = req.body;
-  console.log("HIIII",req.body)
   if (!id, !name || !monarchy || !children || !age || !abilities || !specialty) {
     return res.status(400).json({ error: "All fields are required" });
   }
 
-  // if (Array.isArray(req.body)) {
-  //   const character = await Character.insertMany(req.body);
-  //   res.status(201).json({ character });
-  //   return;
-  // } 
-
-  // try {
-  //   const newCharacter = new Character({
-  //     id,
-  //     name,
-  //     monarchy,
-  //     children,
-  //     age,
-  //     abilities,
-  //     specialty,
-  //   });
-  //   await newCharacter.save();
-  //   res.status(201).json(newCharacter);
-  // } catch (err) {
-  //   console.error("Error creating character:", err);
-  //   res.status(500).send("Server Error");
-  // }
   try {
     const newCharacter = await Character.create(req.body)
     res.status(201).json({newCharacter});

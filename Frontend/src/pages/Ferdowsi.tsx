@@ -1,10 +1,9 @@
-
 import Header from "../components/header/Header";
 
 import { Col, Container, Row } from "react-bootstrap";
 import Sidemenu from "./Sidemenu";
 import Footer from "../components/footer/Footer";
-import "./Ferdowsi.css"
+import "./Ferdowsi.css";
 
 export default function Ferdowsi() {
   return (
@@ -34,16 +33,15 @@ export default function Ferdowsi() {
               securing his place as one of the greatest poets in history.
             </p>
 
-         
-                <img
-                  src="src/assets/images/ferdowsi-tehran.jpg"
-                  alt="Ferdowsi Statue in Tehran"
-                />
-                <p className="description">
-                  Statue of Ferdowsi in Tehran, honoring his contribution to
-                  Persian literature.
-                </p>
-           
+            <img
+              src="src/assets/images/ferdowsi-tehran.jpg"
+              alt="Ferdowsi Statue in Tehran"
+            />
+            <p className="description">
+              Statue of Ferdowsi in Tehran, honoring his contribution to Persian
+              literature.
+            </p>
+
             <p>
               Ferdowsi was born into a family of landowners and was deeply
               influenced by the rich cultural traditions of pre-Islamic Iran.
@@ -68,15 +66,14 @@ export default function Ferdowsi() {
               writers and poets over the centuries.
             </p>
 
-            
-                <img
-                  src="src/assets/images/shahname-matmuseum.jpeg"
-                  alt="mat museum shaahnameh"
-                />
-                <p className="description">
-                "The Angel Surush Rescues Khusrau Parviz from a Cul-de-sac", Folio 708v from the Shahnama (Book of Kings) of Shah Tahmasp"
-                </p>
-            
+            <img
+              src="src/assets/images/shahname-matmuseum.jpeg"
+              alt="mat museum shaahnameh"
+            />
+            <p className="description">
+              "The Angel Surush Rescues Khusrau Parviz from a Cul-de-sac", Folio
+              708v from the Shahnama (Book of Kings) of Shah Tahmasp"
+            </p>
 
             <p>
               Ferdowsi's legacy lives on not only through the Shahnameh but also
@@ -86,7 +83,6 @@ export default function Ferdowsi() {
               revered by people all over the world.
             </p>
 
-
             <h2>Further Reading and Resources</h2>
             <p>
               There are many resources available for those who want to learn
@@ -94,16 +90,55 @@ export default function Ferdowsi() {
               important links:
             </p>
             <ul>
-              <li><a href="https://en.wikipedia.org/wiki/Ferdowsi" target="_blank">Ferdowsi - Wikipedia</a></li>
-              <li><a href="https://www.britannica.com/biography/Ferdowsi" target="_blank">Ferdowsi - Encyclopædia Britannica</a></li>
-              <li><a href="https://iranicaonline.org/articles/ferdowsi-i" target="_blank">Ferdowsi - Encyclopædia Iranica</a></li>
-              <li><a href="https://www.metmuseum.org/toah/hd/shnm/ho_1970.301.4.htm" target="_blank">Shahnameh - The Mat Museum</a></li>
-              <li><a href="https://www.hup.harvard.edu/books/9780674726802" target="_blank">Harvard University - Ferdowsi and the Shahnameh</a></li>
-              <li><a href="https://cudl.lib.cam.ac.uk/collections/shahnama/1" target="_blank">Cambridge University -Shahnama Project</a></li>
-
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/Ferdowsi"
+                  target="_blank"
+                >
+                  Ferdowsi - Wikipedia
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.britannica.com/biography/Ferdowsi"
+                  target="_blank"
+                >
+                  Ferdowsi - Encyclopædia Britannica
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://iranicaonline.org/articles/ferdowsi-i"
+                  target="_blank"
+                >
+                  Ferdowsi - Encyclopædia Iranica
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.metmuseum.org/toah/hd/shnm/ho_1970.301.4.htm"
+                  target="_blank"
+                >
+                  Shahnameh - The Mat Museum
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.hup.harvard.edu/books/9780674726802"
+                  target="_blank"
+                >
+                  Harvard University - Ferdowsi and the Shahnameh
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://cudl.lib.cam.ac.uk/collections/shahnama/1"
+                  target="_blank"
+                >
+                  Cambridge University -Shahnama Project
+                </a>
+              </li>
             </ul>
-
-          
           </div>
         </Col>
       </Row>

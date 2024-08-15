@@ -2,6 +2,8 @@ import React from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import { Character } from "../../types";
 
+// Modal for adding or editing a character
+
 interface CharacterModalProps {
   show: boolean;
   onHide: () => void;
@@ -36,6 +38,17 @@ export default function CharacterModal({
   onSubmit,
   isEditing,
 }: CharacterModalProps) {
+
+
+  //Form validation
+  function handleFormSubmit() {
+    if (!formValues.name || !formValues.monarchy) {
+      alert('add Name and Monarchy fields!');
+      return;
+    }
+    onSubmit();
+  }
+  
   return (
     <Modal show={show} onHide={onHide}>
       <Modal.Header closeButton>
@@ -94,7 +107,7 @@ export default function CharacterModal({
         <Button variant="secondary" onClick={onHide}>
           Close
         </Button>
-        <Button variant="primary" onClick={onSubmit}>
+        <Button variant="primary" onClick={handleFormSubmit}>
           Save Changes
         </Button>
       </Modal.Footer>

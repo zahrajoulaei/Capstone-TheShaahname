@@ -1,7 +1,5 @@
 
 import Header from "../components/header/Header";
-
-// import "./Home/css"
 import { Col, Container, Row } from "react-bootstrap";
 import Sidemenu from "./Sidemenu";
 import Footer from "../components/footer/Footer";

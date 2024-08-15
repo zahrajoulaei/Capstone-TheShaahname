@@ -1,6 +1,4 @@
-
 //Mongoose schema file
-
 const mongoose = require('mongoose');
 
 const characterSchema = new mongoose.Schema({
