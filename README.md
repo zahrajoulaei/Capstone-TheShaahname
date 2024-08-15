@@ -17,6 +17,25 @@ This project is a web application that allows users to search and explore charac
 
 The Shahnameh Characters Project is designed to provide an interactive and engaging way for users to explore the rich and diverse characters of Shahnameh. The application allows users to search for characters by name and view detailed information about them.
 
+## ScreenShots
+
+Below are Screenshots of the application's layout:
+
+
+#### The Home page: 
+![1](Frontend/src/assets/images/1.png)
+
+#### Characters view: 
+![2](Frontend/src/assets/images/2.png)
+
+#### Edit/Add modal: 
+![3](Frontend/src/assets/images/3.png)
+
+#### Edetails about each character:
+![4](Frontend/src/assets/images/4.png)
+
+
+
 ## Sketch
 
 Below is a rough sketch of the application's layout:
@@ -54,7 +73,8 @@ The sketches provides a visual overview of the main sections of the application,
 Here's a brief overview of the project structure:
 
 
-(complete later)
+![tree](Frontend/src/assets/images/tree.png)  
+
 
 
 ## Installation

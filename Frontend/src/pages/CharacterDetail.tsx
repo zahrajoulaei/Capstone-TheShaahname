@@ -6,7 +6,7 @@ import "./CharacterDetail.css";
 import "../pages/Home.css";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
-// import characterImages from "../assets/characterImages.js";
+import characterImages from "../assets/characterImages.js";
 
 import { Col, Container, Row } from "react-bootstrap";
 import Sidemenu from "./Sidemenu";
@@ -46,18 +46,18 @@ export default function CharacterDetail() {
         <Col xs={10} className="CharDetailCard">
           <div className="CharDetailCardInfo">
             <h2>{character.name}</h2>
-            {/* <img
+            <img
               src={
                 characterImages[character.name] ||
                 "/src/assets/images/logohorse.png"
               }
               alt={character.name}
-            /> */}
+            />
 
-<img
+            {/* <img
               src={"https://via.placeholder.com/300"}
               alt={character.name}
-            />
+            /> */}
             <p>Monarchy: {character.monarchy}</p>
             <p>Age: {character.age}</p>
             <p>Abilities: {character.abilities.join(", ")}</p>
