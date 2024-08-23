@@ -26,7 +26,7 @@ export default function Characters() {
   });
 
   const baseURL = "http://localhost:3000";
-  // const baseURL = "the url after deployment";
+  /// const baseURL = "the url after deployment";
 
   useEffect(() => {
     fetchCharacters();
