@@ -25,8 +25,8 @@ export default function Characters() {
     specialty: "",
   });
 
-  const baseURL = "http://localhost:3000";
-  /// const baseURL = "the url after deployment";
+  // const baseURL = "http://localhost:3000";
+  const baseURL = "https://joulaei-zahra-theshaahnameh-capstone-1.onrender.com"
 
   useEffect(() => {
     fetchCharacters();
